@@ -1,0 +1,43 @@
+<div class="md-padding" flex >
+    <md-card>
+        <md-card-content layout="column" flex>
+            <div>
+            	<h1 class="md-title">
+                    <md-icon class="md-warn">assignment_ind</md-icon>
+                    Ficha de Postulación
+                </h1>
+            </div>
+            <div>
+                <form name="formulario_ficha" ng-submit="vm.onSubmit(formulario_ficha)">
+                <md-tabs class="md-accent2" md-stretch-tabs="never" md-center-tabs="false" >
+                    <md-tab ng-repeat="tab in vm.tabs">
+                        <md-tab-label>
+                            {{$index+1}}.- {{tab.title}}
+                        </md-tab-label>
+                        <md-tab-body>
+                            <md-content class="md-padding">
+                                <h2 class="md-title">
+                                    {{$index+1}}.- {{tab.title}}
+                                </h2>
+                                <div class="md-body-1">
+                                    <div sf-schema="tab.schema" sf-form="vm.form" sf-model="vm.formulario_model"></div>
+                                </div>
+                            </md-content>
+                        </md-tab-body>
+                    </md-tab>
+                </md-tabs>
+                <div>
+                    <md-button type="submit" class="md-raised" md-colors="{backgroundColor: 'tema-accent-500'}">
+                        <md-icon class="material-icons-two-tone">save</md-icon> 
+                        Guardar
+                    </md-button>
+                    <md-button type="button" class="md-warn md-raised">
+                        <md-icon class="material-icons-two-tone">undo</md-icon> 
+                        Volver
+                    </md-button>
+                </div>
+                </form>
+            </div>
+        </md-card-content>
+    </md-card>
+</div>

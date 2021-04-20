@@ -1,0 +1,14 @@
+# Use root/example as user/password credentials
+version: '3.5'
+
+services:
+
+  web:
+    container_name: ficha_social_nginx
+    restart: always
+    image: nginx:latest
+    ports:
+      - "9876:80"
+    volumes:
+      - .:/usr/share/nginx/html
+
